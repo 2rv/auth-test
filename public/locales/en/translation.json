@@ -1,0 +1,28 @@
+{
+    "SIGN_UP":{
+        "HEADER":"Sign Up",
+        "FIELD":{
+            "LOGIN":{
+                "TITLE":"Email",
+                "PLACEHOLDER":"Enter your email",
+                "ERRORS":{
+                    "REQUIRED":"Required",
+                    "WRONG":"Attention, the email is incorrect!"
+                }
+            },
+            "PASSWORD":{
+                "TITLE":"Password",
+                "PLACEHOLDER":"Enter your password",
+                "ERRORS":{
+                    "REQUIRED":"Required",
+                    "WRONG":"Attention, the password is incorrect!"
+                }
+            }
+
+        },
+        "SUBMIT":"Sign up",
+        "ERROR":"Attention, error",
+        "FORGET_PASSWORD":"Foget password?",
+        "RESTORE":"Restore"
+    }
+}
