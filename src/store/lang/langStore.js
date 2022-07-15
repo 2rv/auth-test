@@ -4,7 +4,7 @@ const initialState = {
   
 const langStore=(state = initialState,action)=> {
     switch (action.type) {
-        case 'AUTH_SET_DATA':
+        case 'SET_LANG':
         return {
             ...state,
             lang:action.payload
