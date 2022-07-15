@@ -1,5 +1,5 @@
 import React from 'react'
-import SignUpContainer from '../../components/signup/signup.container'
+import SignUpContainer from './signup.container'
 import { FieldLayout } from '../../element/layout/layout.field'
 
 const SignUpPage=() =>{

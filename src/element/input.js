@@ -2,6 +2,8 @@ import styled from 'styled-components'
 import React from 'react'
 import { useTranslation } from "react-i18next";
 import '../utils/i18next'
+import { THEME_CONFIG } from '../theme/theme';
+
 
 
 export default function FormInput(props) {
@@ -17,7 +19,7 @@ export default function FormInput(props) {
     }=props
     const {t}=useTranslation()
     return (
-    <Container>
+    <div>
         <Title>
             {title}
         </Title>
@@ -31,29 +33,25 @@ export default function FormInput(props) {
         />
         {error &&<ErrorMessage>{t(error)}</ErrorMessage>}
 
-    </Container>
+    </div>
   )
 }
-const Container=styled.div`
-    margin-bottom:10px;
-`
+
 const Title=styled.span`
-    font-family: 'PT Root UI', sans-serif;
+    font-family: ${THEME_CONFIG.FONT_FAMILY};
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: ${THEME_CONFIG.MAIN_FONT_SIZE};
     line-height: 100%;
 `
-
-
 
 const ErrorMessage=styled.span`
-    font-family: 'PT Root UI', sans-serif;
+    font-family: ${THEME_CONFIG.FONT_FAMILY};
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
+    font-size: ${THEME_CONFIG.SECONDARY_FONT_SIZE};
     line-height: 100%;
-    color: #FB6061;
+    color: ${THEME_CONFIG.ERROR_COLOR};
 
 `
 
@@ -69,17 +67,17 @@ const Input=styled.input`
     width: 345px;
     height: 46px;
 
-    background: #F7F7F7;
-    border: 1px solid #FB6061;
-    border-radius: 10px;
+    background: ${THEME_CONFIG.MAIN_BACKGROUND_COLOR};;
+    border: 1px solid ${THEME_CONFIG.ERROR_COLOR};
+    border-radius: ${THEME_CONFIG.MAIN_BORDER_RADIUS};
 
     ::placeholder {
-        font-family: 'PT Root UI', sans-serif;
+        font-family: ${THEME_CONFIG.FONT_FAMILY};
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: ${THEME_CONFIG.MAIN_FONT_SIZE};
         line-height: 100%;
-        color: #FB6061;
+        color: ${THEME_CONFIG.PROMPT_COLOR};
       }
     :focus {
         display: flex;
@@ -89,9 +87,9 @@ const Input=styled.input`
         gap: 16px;
         width: 345px;
         height: 46px;
-        background: #F7F7F7;
+        background: ${THEME_CONFIG.MAIN_BACKGROUND_COLOR};
         outline: none;
         border:none;
-        border-radius: 10px;
+        border-radius: ${THEME_CONFIG.MAIN_BORDER_RADIUS};
     }
 `

@@ -1,0 +1,11 @@
+export const THEME_CONFIG={
+    FONT_FAMILY:`'PT Root UI', sans-serif`,
+    ERROR_COLOR:'#FB6061',
+    MAIN_COLOR:'#F46F17',
+    PROMPT_COLOR:'#888888',
+    MAIN_BACKGROUND_COLOR:'#F7F7F7',
+    MAIN_FONT_SIZE:'14px',
+    SECONDARY_FONT_SIZE:'12px',
+    MAIN_BORDER_RADIUS:'10px',
+    
+}

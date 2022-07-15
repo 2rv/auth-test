@@ -1,7 +1,7 @@
 import React from 'react'
-import { FieldLayout } from '../element/layout/layout.field'
+import { FieldLayout } from '../../element/layout/layout.field'
 
-function AuthSuccessfully() {
+function AuthSuccessfullyPage() {
   return (
     <FieldLayout>
         <h1>Congratulations On Your Authorization</h1>
@@ -9,4 +9,4 @@ function AuthSuccessfully() {
   )
 }
 
-export default AuthSuccessfully
+export default AuthSuccessfullyPage

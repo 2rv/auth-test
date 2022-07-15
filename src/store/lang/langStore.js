@@ -9,6 +9,7 @@ const langStore=(state = initialState,action)=> {
             ...state,
             lang:action.payload
         };
+        
 
         default:
             return state;

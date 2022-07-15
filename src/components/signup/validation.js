@@ -1,6 +1,6 @@
-import { SIGNUP_FORM_FIELD_NAME } from "./signup.type"
+import { SIGNUP_FORM_FIELD_NAME } from "./constants"
 
-export function singupValidation (values,t) {  
+export function singupValidation (values) {  
     const errors = {}
     if (!values[SIGNUP_FORM_FIELD_NAME.EMAIL]) {
         errors[SIGNUP_FORM_FIELD_NAME.EMAIL] = "SIGN_UP.FIELD.LOGIN.ERRORS.REQUIRED"

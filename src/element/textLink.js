@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { THEME_CONFIG } from '../theme/theme'
 
-export default function RestorePassword(props) {
+export default function TextLink(props) {
   return (
     <Container>
         <Text>
@@ -16,23 +17,23 @@ export default function RestorePassword(props) {
 
 const Container=styled.div`
     display:flex;
-    margin-top:25px;
 `
 
 const Text=styled.span`
-    font-family: 'PT Root UI';
+    font-family:  ${THEME_CONFIG.FONT_FAMILY};
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
+    font-size: ${THEME_CONFIG.MAIN_FONT_SIZE};
     line-height: 150%;
-    color: #888888;
+    color:  ${THEME_CONFIG.PROMPT_COLOR};
 `
 
 const Link=styled.span`
-    font-family: 'PT Root UI';
+    font-family:  ${THEME_CONFIG.FONT_FAMILY};
     font-weight: bold;
     text-decoration:underline;
-    font-size: 14px;
+    font-size:  ${THEME_CONFIG.MAIN_FONT_SIZE};
     line-height: 150%;
-    color: #F46F17;
+    color:  ${THEME_CONFIG.MAIN_COLOR};
+    margin-left:0.3em;
 `

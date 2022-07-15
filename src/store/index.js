@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import authStore from './auth/authStore';
+import authStore from '../components/signup/authStore';
 import langStore from './lang/langStore';
 
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { THEME_CONFIG } from '../theme/theme'
 
 export default function SubmitButton(props) {
     const{
@@ -8,17 +9,15 @@ export default function SubmitButton(props) {
         disabled,
     }=props
     return (
-    <Container>
+
         <Button
             type={type}
             disabled={disabled}
         >{text}</Button>        
-    </Container>
+
   )
 }
-const Container=styled.div`
-    margin:15px 0;
-`
+
 
 const Button=styled.button`
     display: flex;
@@ -31,15 +30,15 @@ const Button=styled.button`
     width: 345px;
     height: 46px;
 
-    background: #F46F17;
-    border-radius: 10px;
+    background: ${THEME_CONFIG.MAIN_COLOR};
+    border-radius: ${THEME_CONFIG.MAIN_BORDER_RADIUS};
     outline:none;
     border:none;
 
-    font-family: 'PT Root UI';
+    font-family: ${THEME_CONFIG.FONT_FAMILY};
     font-style: normal;
     font-weight: 700;
-    font-size: 14px;
+    font-size: ${THEME_CONFIG.MAIN_FONT_SIZE};
     line-height: 100%;
 
     text-align: center;
