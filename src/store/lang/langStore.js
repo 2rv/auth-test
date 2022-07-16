@@ -1,19 +1,18 @@
 const initialState = {
-    lang: 'ua',
-  };
-  
-const langStore=(state = initialState,action)=> {
-    switch (action.type) {
-        case 'SET_LANG':
-        return {
-            ...state,
-            lang:action.payload
-        };
-        
+  lang: "ua",
+};
 
-        default:
-            return state;
-    }
-}
+const langStore = (state = initialState, action) => {
+  switch (action.type) {
+    case "SET_LANG":
+      return {
+        ...state,
+        lang: action.payload,
+      };
 
-export default langStore
+    default:
+      return state;
+  }
+};
+
+export default langStore;

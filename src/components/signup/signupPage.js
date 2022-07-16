@@ -1,13 +1,13 @@
-import React from 'react'
-import SignUpContainer from './signup.container'
-import { FieldLayout } from '../../element/layout/layout.field'
+import React from "react";
+import SignUpContainer from "./signup.container";
+import { FieldLayout } from "../../element/layout/layout.field";
 
-const SignUpPage=() =>{
+const SignUpPage = () => {
   return (
     <FieldLayout>
-        <SignUpContainer/>
+      <SignUpContainer />
     </FieldLayout>
-  )
-}
+  );
+};
 
-export default SignUpPage
+export default SignUpPage;

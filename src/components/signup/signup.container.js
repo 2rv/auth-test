@@ -1,56 +1,39 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+
 import SignUpComponent from "./signup.component";
 import { singupValidation } from "./validation";
-import {useDispatch,useSelector} from "react-redux";
-import {SIGNUP_FORM_FIELD_NAME} from "./constants"
-import { signInUserSuccessfull,signInUserError,resetStore } from "./authAction";
+import { useDispatch, useSelector } from "react-redux";
+import { SIGNUP_FORM_FIELD_NAME } from "./constants";
+import { convertAuthLoginFormData } from "./convert";
+import { uploadAuthLoginForm } from "./authAction";
+import { resetStore } from "./authAction";
 import { useNavigate } from "react-router-dom";
-import {AUTH_LOGIN_API} from "./constants";
 
-export default function SignUpContainer (){
-    useEffect(()=>{
-        dispatch(resetStore())
-    },[])
-    
-    const navigate=useNavigate()
-    const dispatch=useDispatch()
+export default function SignUpContainer() {
+  useEffect(() => {
+    dispatch(resetStore());
+  }, []);
 
-    const state=useSelector(({AUTH})=>AUTH)
-    
-    const fieldEmail=SIGNUP_FORM_FIELD_NAME.EMAIL
-    const fieldPassword=SIGNUP_FORM_FIELD_NAME.PASSWORD
-    
-    const onSubmitForm =async (values,{ setStatus }) => {
-        const data={
-            password:values.password,
-            login:values.email
-        }
-        try {
-            await axios({
-                method: 'post',
-                url:AUTH_LOGIN_API ,
-                data:data})
-                .then(res=>{
-                    if(res.status===201){
-                        dispatch(signInUserSuccessfull(data.login))
-                        navigate('/auth_successfully')
-                    }
-                })
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-            }catch(error){
-                dispatch(signInUserError())
-            }    
-          ;
-    }
-    return(    
-        <SignUpComponent 
-            onSubmitForm={onSubmitForm}
-            singupValidation={singupValidation}
-            fieldEmail={fieldEmail}
-            fieldPassword={fieldPassword}
-            error={state.error}
-        />
-)}
+  const state = useSelector(({ AUTH }) => AUTH);
 
+  const fieldEmail = SIGNUP_FORM_FIELD_NAME.LOGIN;
+  const fieldPassword = SIGNUP_FORM_FIELD_NAME.PASSWORD;
 
+  const onSubmitForm = (values) => {
+    const data = convertAuthLoginFormData(values);
+    dispatch(uploadAuthLoginForm(data, navigate));
+  };
+
+  return (
+    <SignUpComponent
+      onSubmitForm={onSubmitForm}
+      singupValidation={singupValidation}
+      fieldEmail={fieldEmail}
+      fieldPassword={fieldPassword}
+      error={state.error}
+    />
+  );
+}
